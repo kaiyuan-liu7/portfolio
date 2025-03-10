@@ -1,0 +1,41 @@
+/* 添加或更新以下样式 */
+.project-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid #eaeaea;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #333;
+}
+
+.nav-link:hover {
+  color: #666;
+}
+
+.back-to-projects {
+  text-align: center;
+}
+
+.back-to-projects a {
+  color: #333;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-projects a::before {
+  content: "←";
+  margin-right: 8px;
+}
+
+.back-to-projects a:hover {
+  color: #666;
+} 
