@@ -596,7 +596,7 @@ footer {
     margin-right: auto;
 }
 
-.nav-button {
+.nav-button, .back-button {
     display: inline-block;
     color: #333;
     text-decoration: none;
@@ -605,7 +605,7 @@ footer {
     transition: all 0.3s ease;
 }
 
-.nav-button:hover {
+.nav-button:hover, .back-button:hover {
     color: #0071e3;
     transform: translateX(0);
 }
