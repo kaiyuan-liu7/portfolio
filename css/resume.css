@@ -1,0 +1,105 @@
+/* 简历部分样式 */
+.resume-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.resume-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #333;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.resume-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: #0071e3;
+}
+
+.resume-item {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid #f0f0f0;
+    padding-bottom: 5px;
+    transition: border-left-color 0.3s ease;
+}
+
+.resume-item:hover {
+    border-left-color: #0071e3;
+}
+
+.resume-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.resume-place {
+    font-size: 0.95rem;
+    color: #0071e3;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.resume-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+.language-item {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.language-item span {
+    font-size: 1rem;
+    color: #333;
+    margin-right: 10px;
+}
+
+/* 个人照片样式优化 */
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 3px solid #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .resume-section h3 {
+        font-size: 1.3rem;
+    }
+    
+    .resume-item h4 {
+        font-size: 1.1rem;
+    }
+    
+    .profile-image {
+        width: 150px;
+        height: 150px;
+    }
+}
