@@ -178,23 +178,17 @@ nav {
     background-color: #FAFAFA;
 }
 
-.about h2,
-.featured-projects h2,
-.projects h2,
-.contact h2 {
+.about h2 {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
     position: relative;
 }
 
-.about h2::after,
-.featured-projects h2::after,
-.projects h2::after,
-.contact h2::after {
+.about h2::after {
     content: '';
     position: absolute;
-    bottom: -15px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
     width: 50px;
@@ -204,22 +198,27 @@ nav {
 
 .about-content {
     display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
+    flex-direction: column;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    margin-bottom: 40px;
 }
 
 .about-text {
-    flex: 1;
-    min-width: 300px;
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    padding: 20px 0;
+    text-align: center;
 }
 
 .about-text p {
     margin-bottom: 0;
     font-size: 1.1rem;
+    line-height: 1.8;
     color: #666;
 }
 
@@ -677,6 +676,19 @@ footer {
         width: 100%;
         height: auto;
     }
+    
+    .about {
+        padding: 70px 0;
+    }
+    
+    .about-content {
+        max-width: 100%;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
 }
 
 /* 修改导航栏响应式设计 */
@@ -735,4 +747,26 @@ footer {
     width: 100%;
     height: auto;
   }
+}
+
+.featured-projects h2,
+.projects h2,
+.contact h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.featured-projects h2::after,
+.projects h2::after,
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background-color: #0071e3;
 }

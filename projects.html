@@ -19,6 +19,24 @@
             background-color: #FAFAFA;
         }
         
+        .page-header {
+            text-align: center;
+            padding: 80px 0 80px;
+            background-color: #FAFAFA;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
         .projects {
             padding-top: 30px;
             padding-bottom: 80px;
@@ -26,8 +44,8 @@
         
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(3, 1fr); /* 固定一行显示3个项目 */
+            gap: 30px;
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
@@ -36,33 +54,63 @@
         .project-card {
             background-color: transparent;
             box-shadow: none;
-            transition: opacity 0.3s ease;
+            transition: all 0.5s ease; /* 增加过渡时间，使效果更自然 */
+            position: relative;
+            overflow: hidden;
+            width: 100%;
         }
         
-        .project-card:hover {
-            opacity: 0.8;
-            transform: none;
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-card:hover .project-image {
+            filter: blur(2px); /* 减少模糊程度，只保留轻微朦胧感 */
         }
         
         .project-image {
-            height: 300px;
+            height: 0;
+            width: 100%;
             border-radius: 0;
+            background-size: contain; /* 改回contain，确保图片完整显示不裁剪 */
+            background-repeat: no-repeat;
+            background-position: center;
+            padding-bottom: 135.85%; /* 按照795:1080的比例（约为3:4） */
+            transition: filter 0.5s ease; /* 增加过渡时间 */
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* 减轻深色程度 */
+            backdrop-filter: blur(3px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.5s ease; /* 增加过渡时间，使效果更自然 */
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .project-overlay h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .project-overlay p {
+            color: #ddd;
+            font-size: 1rem;
         }
         
         .project-info {
-            padding: 15px 0;
-            text-align: left;
-        }
-        
-        .project-info h3 {
-            font-size: 1.1rem;
-            font-weight: 500;
-            margin-bottom: 5px;
-        }
-        
-        .project-info p {
-            font-size: 0.9rem;
-            color: #666;
+            display: none; /* 隐藏原来的标题和副标题 */
         }
         
         footer {
@@ -70,15 +118,25 @@
             background-color: #FAFAFA;
         }
         
+        @media screen and (max-width: 992px) {
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr); /* 平板设备显示2列 */
+            }
+        }
+        
         @media screen and (max-width: 768px) {
             .projects-grid {
-                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-                gap: 30px;
+                grid-template-columns: 1fr; /* 移动设备显示1列 */
+                gap: 20px;
                 padding: 0 15px;
             }
             
-            .project-image {
-                height: 250px;
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1.1rem;
             }
         }
     </style>
@@ -94,10 +152,21 @@
         </nav>
     </header>
 
+    <section class="page-header">
+        <div class="container">
+            <h1>My Projects</h1>
+            <p>My works from 2023 to 2025</p>
+        </div>
+    </section>
+
     <section class="projects">
         <div class="projects-grid">
             <a href="project1.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/1.png')"></div>
+                <div class="project-overlay">
+                    <h3>Inside Out</h3>
+                    <p>Embodied Interaction</p>
+                </div>
                 <div class="project-info">
                     <h3>Inside Out</h3>
                     <p>Embodied Interaction</p>
@@ -105,6 +174,10 @@
             </a>
             <a href="project2.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/2.png')"></div>
+                <div class="project-overlay">
+                    <h3>Invisible</h3>
+                    <p>Video Game Design</p>
+                </div>
                 <div class="project-info">
                     <h3>Invisible</h3>
                     <p>Video Game Design</p>
@@ -112,6 +185,10 @@
             </a>
             <a href="project3.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/3.png')"></div>
+                <div class="project-overlay">
+                    <h3>D-Heart</h3>
+                    <p>UX/UI Redesign</p>
+                </div>
                 <div class="project-info">
                     <h3>D-Heart</h3>
                     <p>UX/UI Redesign</p>
@@ -119,6 +196,10 @@
             </a>
             <a href="project4.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/4.png')"></div>
+                <div class="project-overlay">
+                    <h3>Nora</h3>
+                    <p>Physical Interaction</p>
+                </div>
                 <div class="project-info">
                     <h3>Nora</h3>
                     <p>Physical Interaction</p>
@@ -126,6 +207,10 @@
             </a>
             <a href="project5.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/5.png')"></div>
+                <div class="project-overlay">
+                    <h3>Portal Explorer</h3>
+                    <p>Metaverse Experience</p>
+                </div>
                 <div class="project-info">
                     <h3>Portal Explorer</h3>
                     <p>Metaverse Experience</p>
@@ -133,6 +218,10 @@
             </a>
             <a href="project6.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/6.png')"></div>
+                <div class="project-overlay">
+                    <h3>Tomate</h3>
+                    <p>Hardware & Software</p>
+                </div>
                 <div class="project-info">
                     <h3>Tomate</h3>
                     <p>Hardware & Software</p>
@@ -140,6 +229,10 @@
             </a>
             <a href="project7.html" class="project-card">
                 <div class="project-image" style="background-image: url('images/ProjectCover/7.png')"></div>
+                <div class="project-overlay">
+                    <h3>Liv</h3>
+                    <p>Illumination Design</p>
+                </div>
                 <div class="project-info">
                     <h3>Liv</h3>
                     <p>Illumination Design</p>
