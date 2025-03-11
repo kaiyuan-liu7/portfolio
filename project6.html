@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .project-detail {
-            padding: 80px 0;
+            padding: 60px 0 0 0;
         }
         .project-title {
             text-align: center;
             margin-bottom: 50px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;
         }
         .project-title h1 {
             font-size: 2.5rem;
@@ -25,15 +29,26 @@
         .project-images {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            background-color: #FAFAFA;
         }
         .project-image-item {
             width: 100%;
+            margin: 0;
+            padding: 0;
+            display: block;
+            line-height: 0;
         }
         .project-image-item img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: block;
+            margin: 0;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
         }
         .back-button {
             display: inline-block;
@@ -69,26 +84,28 @@
                 <h1>Tomate</h1>
                 <p>Hardware & Software</p>
             </div>
-            <div class="project-images">
-                <div class="project-image-item">
-                    <img src="images/project6/50.png" alt="Project 6 Image">
-                </div>
-                <div class="project-image-item">
-                    <img src="images/project6/51.png" alt="Project 6 Image">
-                </div>
-                <div class="project-image-item">
-                    <img src="images/project6/52.png" alt="Project 6 Image">
-                </div>
-                <div class="project-image-item">
-                    <img src="images/project6/53.png" alt="Project 6 Image">
-                </div>
-                <div class="project-image-item">
-                    <img src="images/project6/54.png" alt="Project 6 Image">
-                </div>
-                <div class="project-image-item">
-                    <img src="images/project6/55.png" alt="Project 6 Image">
-                </div>
+        </div>
+        <div class="project-images">
+            <div class="project-image-item">
+                <img src="images/project6/50.png" alt="Project 6 Image">
             </div>
+            <div class="project-image-item">
+                <img src="images/project6/51.png" alt="Project 6 Image">
+            </div>
+            <div class="project-image-item">
+                <img src="images/project6/52.png" alt="Project 6 Image">
+            </div>
+            <div class="project-image-item">
+                <img src="images/project6/53.png" alt="Project 6 Image">
+            </div>
+            <div class="project-image-item">
+                <img src="images/project6/54.png" alt="Project 6 Image">
+            </div>
+            <div class="project-image-item">
+                <img src="images/project6/55.png" alt="Project 6 Image">
+            </div>
+        </div>
+        <div class="container">
             <div class="project-navigation">
                 <a href="project5.html" class="nav-link">← Previous Project</a>
                 <div class="back-to-projects">
