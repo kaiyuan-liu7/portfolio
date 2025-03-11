@@ -91,52 +91,38 @@ nav {
     width: 100%;
 }
 
-/* 英雄区域样式 */
+/* 英雄区域样式 - 完全重构 */
 .hero {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    background-color: #f5f5f7;
-    padding-top: 60px;
     position: relative;
-    overflow: hidden;
     width: 100%;
-}
-
-/* 确保在宽屏时两侧填充灰色 */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to bottom, rgba(245, 245, 247, 0.8) 0%, rgba(245, 245, 247, 0.4) 50%, rgba(245, 245, 247, 0.8) 100%);
-    z-index: 1;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f7;
+    overflow: hidden;
+    line-height: 0; /* 移除行高导致的空隙 */
 }
 
 .hero-content {
     width: 100%;
+    margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    line-height: 0; /* 移除行高导致的空隙 */
 }
 
 .cover-image {
     width: 100%;
-    height: auto;
+    margin: 0;
+    padding: 0;
+    display: block;
+    line-height: 0; /* 移除行高导致的空隙 */
 }
 
 .cover-image img {
     width: 100%;
-    height: auto;
     display: block;
-    position: relative;
-    z-index: 2;
-    object-fit: cover;
+    margin: 0;
+    padding: 0;
 }
 
 .hero-title {
@@ -147,6 +133,7 @@ nav {
     z-index: 3;
     text-align: center;
     width: 100%;
+    line-height: normal; /* 恢复标题行高 */
 }
 
 .hero-title h1 {
@@ -297,7 +284,7 @@ nav {
 /* 英雄区域项目展示样式 */
 .hero-projects {
     position: absolute;
-    bottom: 50px;
+    bottom: 5%; /* 改为百分比定位，相对于hero容器 */
     left: 0;
     right: 0;
     z-index: 3;
@@ -306,6 +293,7 @@ nav {
     justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
+    line-height: normal; /* 恢复正常行高 */
 }
 
 .hero-projects .project-item {
@@ -630,21 +618,25 @@ footer {
     transform: translateX(5px);
 }
 
-/* 响应式设计 */
-@media (max-width: 768px) {
-    .hero h1 {
+/* 移动端适配 */
+@media screen and (max-width: 768px) {
+    .hero-title h1 {
         font-size: 2.5rem;
     }
     
-    .hero p {
-        font-size: 1.2rem;
+    .hero-title h2 {
+        font-size: 1.5rem;
     }
     
-    .about h2,
-    .featured-projects h2,
-    .projects h2,
-    .contact h2 {
-        font-size: 2rem;
+    .hero-projects {
+        bottom: 3%; /* 在小屏幕上调整位置 */
+        gap: 10px;
+    }
+    
+    .hero-projects .project-item {
+        width: 70px;
+        height: 70px;
+        margin: 0 5px;
     }
     
     .projects-grid {
@@ -654,4 +646,62 @@ footer {
     .nav-links {
         display: none;
     }
+}
+
+/* 修改导航栏响应式设计 */
+@media screen and (max-width: 768px) {
+  nav {
+    padding: 15px 20px;
+  }
+  
+  .nav-links {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+  }
+  
+  .nav-links li {
+    margin-left: 15px;
+  }
+  
+  .nav-links li a {
+    font-size: 14px;
+  }
+}
+
+/* 调整封面图片样式 */
+.hero-section {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: auto; /* 改为自动高度 */
+    padding: 0;
+  }
+  
+  .hero-content {
+    height: auto;
+  }
+  
+  .cover-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .cover-image img {
+    width: 100%;
+    height: auto;
+  }
 }
