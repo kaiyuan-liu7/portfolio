@@ -13,10 +13,11 @@
   align-items: center;
   text-decoration: none;
   color: #333;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
-  color: #666;
+  color: #0071e3;
 }
 
 .back-to-projects {
@@ -29,6 +30,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  transition: color 0.3s ease;
 }
 
 .back-to-projects a::before {
@@ -37,5 +39,5 @@
 }
 
 .back-to-projects a:hover {
-  color: #666;
-} 
+  color: #0071e3;
+}

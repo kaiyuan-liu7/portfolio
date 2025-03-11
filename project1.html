@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         .project-detail {
-            padding: 80px 0;
+            padding: 60px 0 0 0;
         }
         .project-title {
             text-align: center;
@@ -25,15 +25,14 @@
         .project-images {
             display: flex;
             flex-direction: column;
-            gap: 30px;
+            gap: 0;
         }
         .project-image-item {
             width: 100%;
         }
         .project-image-item img {
             width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            display: block;
         }
         .back-button {
             display: inline-block;
@@ -44,7 +43,7 @@
             transition: all 0.3s ease;
         }
         .back-button:hover {
-            color: #0071e3;
+            color: #333;
         }
         .back-button:hover::before {
             transform: translateX(-5px);
@@ -106,6 +105,9 @@
                 <div class="project-image-item">
                     <img src="images/project1/14.png" alt="Project 1 Image">
                 </div>
+            </div>
+            <div class="video-link" style="text-align: center; margin: 30px 0; font-size: 1rem;">
+                <a href="https://www.youtube.com/watch?v=example" target="_blank" style="color: #005bbf; text-decoration: none; transition: all 0.3s ease;">Click here to see the video!</a>
             </div>
             <div class="project-navigation">
                 <a href="project7.html" class="nav-link">← Previous Project</a>

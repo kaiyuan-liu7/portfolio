@@ -35,18 +35,18 @@ header {
     left: 0;
     width: 100%;
     height: 60px; /* 明确设置导航栏高度 */
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
     z-index: 1000;
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 12px 20px;
+    padding: 0 20px; /* 移除上下内边距，使用导航栏高度和垂直居中来控制 */
+    height: 100%; /* 使导航占满header高度 */
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -64,32 +64,34 @@ nav {
 
 .nav-links li {
     margin-left: 30px;
+    display: flex;
+    align-items: center;
+    height: 100%;
 }
 
 .nav-links a {
     font-size: 16px;
     font-weight: 500;
     position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
 }
 
 .nav-links a.active {
     color: #0071e3;
 }
 
+.nav-links a:hover {
+    color: #0071e3;
+}
+
 .nav-links a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #0071e3;
-    transition: width 0.3s ease;
+    display: none;
 }
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-    width: 100%;
+    display: none;
 }
 
 /* 导航栏下方的固定高度空白容器 */
@@ -163,20 +165,18 @@ nav {
 
 .cta-button {
     display: inline-block;
-    background-color: #0071e3;
+    background-color: #333;
     color: #fff;
     padding: 12px 30px;
-    border-radius: 30px;
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
 }
 
 .cta-button:hover {
-    background-color: #0058b0;
+    background-color: #555;
     color: #fff;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 113, 227, 0.4);
 }
 
 /* 关于部分样式 */
@@ -237,6 +237,16 @@ nav {
 
 .skill-item {
     margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.skill-item:hover .skill-icon {
+    color: #0071e3;
 }
 
 .skill-item span {
@@ -261,10 +271,10 @@ nav {
 .secondary-button {
     display: inline-block;
     background-color: transparent;
-    color: #0071e3;
-    border: 2px solid #0071e3;
-    padding: 10px 25px;
+    color: #333;
+    padding: 12px 30px;
     border-radius: 30px;
+    border: 1px solid #ddd;
     font-size: 1rem;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -273,6 +283,7 @@ nav {
 .secondary-button:hover {
     background-color: #0071e3;
     color: #fff;
+    border-color: #0071e3;
 }
 
 /* 项目部分样式 */
@@ -376,53 +387,41 @@ nav {
 
 .project-card {
     background-color: #fff;
-    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .project-image {
-    height: 320px;
+    height: 280px;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .project-info {
-    padding: 20px;
+    padding: 12px 15px;
 }
 
 .project-info h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #333;
 }
 
 .project-info p {
     color: #666;
-    margin-bottom: 15px;
-}
-
-.project-link {
-    color: #0071e3;
-    font-weight: 500;
-    display: inline-block;
-    position: relative;
-}
-
-.project-link::after {
-    content: '→';
-    margin-left: 5px;
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover::after {
-    transform: translateX(5px);
+    margin-bottom: 0;
+    font-size: 0.9rem;
 }
 
 .center-button {
@@ -548,6 +547,16 @@ footer {
     padding: 50px 0 20px;
 }
 
+.contact-link {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #0071e3;
+}
+
 .footer-content {
     display: flex;
     justify-content: space-between;
@@ -565,12 +574,12 @@ footer {
     margin-left: 15px;
     font-size: 1.5rem;
     color: #333;
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .social-links a:hover {
     color: #0071e3;
-    transform: translateY(-3px);
+    transform: none;
 }
 
 .copyright {
@@ -598,7 +607,7 @@ footer {
     text-decoration: none;
     font-size: 0.95rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .nav-button:hover, .back-button:hover {
