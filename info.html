@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaiyuan Liu | Info</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/transitions.css">
+    <link rel="stylesheet" href="css/resume.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .info-header {
+            margin-bottom: 70px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 25px;
+        }
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .info-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .info-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+        
+        .info-content {
+            width: 60%;
+            margin: 0 auto;
+        }
+        
+        .info-section {
+            margin-bottom: 60px;
+        }
+        
+        .info-section h2 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .info-paragraph {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 30px;
+        }
+        
+        .skill-list, .language-list, .social-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .skill-list li, .language-list li, .social-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 15px;
+        }
+        
+        .skill-list li:before, .language-list li:before, .social-list li:before {
+            content: "+";
+            position: absolute;
+            left: 0;
+            color: #888;
+        }
+        
+        .experience-item {
+            margin-bottom: 35px;
+        }
+        
+        .experience-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .experience-item .date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .experience-item p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .experience-item a {
+            display: inline-block;
+            margin-top: 8px;
+            color: #0071e3;
+            text-decoration: none;
+        }
+        
+        .experience-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .education-item {
+            margin-bottom: 35px;
+        }
+        
+        .education-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+        
+        .education-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: normal;
+        }
+        
+        .education-item .date {
+            font-size: 0.9rem;
+            color: #888;
+            margin-bottom: 10px;
+        }
+        
+        .education-item p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background-color: #eee;
+            margin: 50px 0;
+            width: 100%;
+        }
+        
+        .contact-info {
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            margin-bottom: 20px;
+        }
+        
+        .contact-item p {
+            font-size: 1rem;
+            color: #555;
+        }
+        
+        .social-links {
+            margin-top: 30px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin-right: 25px;
+            font-size: 1.5rem;
+            color: #333;
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #0071e3;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            .info-content {
+                width: 90%;
+            }
+            
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">Kaiyuan Liu</a></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="info.html" class="active">Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="info-container">
+        <div class="info-header">
+            <div class="profile-photo">
+                <img src="images/myphoto/myphoto.png" alt="Kaiyuan Liu">
+            </div>
+            <h1>Kaiyuan Liu</h1>
+            <p>Design for meaningful and valuable experience.</p>
+        </div>
+        
+        <div class="info-content">
+            <div class="info-section">
+                <h2>About Me</h2>
+                <p class="info-paragraph">At the intersection of rational thinking and artistic intuition, I am passionate about leveraging my design expertise and logical reasoning to create valuable and meaningful user experiences. My focus lies in envisioning and designing interactive experiences that resonate with people's needs and emotions. I often blend problem-solving with creative expression, striving to craft engaging experiences that forge authentic connections with people.</p>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="info-section">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Politecnico di Milano</h3>
+                    <h4>Master · Digital and Interaction Design</h4>
+                    <div class="date">2023 - Present · Milan · Italy</div>
+                    <p>User experience design, UX research, interaction design, virtual and physical hardware prototyping.</p>
+                </div>
+                
+                <div class="education-item">
+                    <h3>Politecnico di Milano</h3>
+                    <h4>Bachelor · Industrial Product Design</h4>
+                    <div class="date">2020 - 2023 · Milan · Italy</div>
+                    <p>Industrial design fundamentals, user-centered design, manufacturing and prototyping process.</p>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="info-section">
+                <h2>Skills</h2>
+                <div class="skills-grid">
+                    <ul class="skill-list">
+                        <li>Unity</li>
+                        <li>Keyshot</li>
+                        <li>Photoshop</li>
+                        <li>Arduino IDE</li>
+                        <li>User Research</li>
+                        <li>User Journey Mapping</li>
+                    </ul>
+                    <ul class="skill-list">
+                        <li>Blender</li>
+                        <li>Figma</li>
+                        <li>InDesign</li>
+                        <li>Illustrator</li>
+                        <li>Usability Testing</li>
+                        <li>Information Architecture</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="info-section">
+                <h2>Experience</h2>
+                <div class="experience-item">
+                    <h3>Sony Workshop</h3>
+                    <div class="date">2025 Feb. Project "Nora"</div>
+                    <p>As an interaction designer collaborate with Sony Creative Center to design a sound filtering smart curtain.</p>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Videogame Design</h3>
+                    <div class="date">2024 Sep - 2025 Feb. Videogame "Invisible"</div>
+                    <p>As a team leader and designer, coordinated cross-functional team efforts in programming, art, interaction and level design. Developed a complete 3D narrative game with Unity and released on itch.io.</p>
+                    <a href="#">Link</a>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Embodied Interaction Design</h3>
+                    <div class="date">2024 Feb - Jun. Project "Inside Out"</div>
+                    <p>As interaction and product designer, developed ML-driven device enabling long-distance emotional communication through gesture-to-music translation. Participated in Arduino Days 2025.</p>
+                    <a href="#">Link</a>
+                </div>
+                
+                <div class="experience-item">
+                    <h3>Open COmeta Inclusive Hackthon</h3>
+                    <div class="date">2023 Mar - May. Project "Mowhee"</div>
+                    <p>As a product designer, implemented and made open-source a fidget toy for autism.</p>
+                    <a href="#">Link</a>
+                </div>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="info-section">
+                <h2>Language</h2>
+                <ul class="language-list">
+                    <li>Chinese (mother tongue)</li>
+                    <li>English (fluent)</li>
+                    <li>Italian (fluent)</li>
+                </ul>
+            </div>
+            
+            <div class="section-divider"></div>
+            
+            <div class="info-section">
+                <h2>Contact</h2>
+                <div class="contact-item">
+                    <p>kaiyuan_liu@icloud.com</p>
+                </div>
+                <div class="contact-item">
+                    <p>kaiyuan7liu@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <p>IT +39 3475725674</p>
+                </div>
+                <div class="contact-item">
+                    <p>CN +86 13305464979</p>
+                </div>
+                <div class="contact-item">
+                    <p>Milan, Italy</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/kaiyuanliu7" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/frankyyy.7" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.behance.net/liukaiyuan" target="_blank"><i class="fab fa-behance"></i></a>
+                    <a href="#" title="WeChat: frankiron777"><i class="fab fa-weixin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Kaiyuan Liu</div>
+                <div class="footer-name">Portfolio</div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/page-transition.js"></script>
+</body>
+</html> 

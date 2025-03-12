@@ -33,7 +33,8 @@ header {
     position: relative;
     width: 100%;
     height: 60px; /* 明确设置导航栏高度 */
-    background-color: #FAFAFA;
+    background-color: transparent;
+    z-index: 100;
 }
 
 nav {
@@ -44,6 +45,7 @@ nav {
     height: 100%; /* 使导航占满header高度 */
     max-width: 1200px;
     margin: 0 auto;
+    background-color: transparent;
 }
 
 .logo {
